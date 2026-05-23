@@ -4,8 +4,6 @@ API RESTful desenvolvida com ASP.NET Core 8, Entity Framework Core e SQL Server 
 
 ## 📌 Sobre o projeto
 
-Este projeto foi desenvolvido como desafio técnico para a vaga de Desenvolvedor C#.
-
 A aplicação permite realizar operações CRUD completas em uma lista de tarefas:
 
 - Criar tarefas
