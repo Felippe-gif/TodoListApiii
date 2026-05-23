@@ -214,6 +214,12 @@ DELETE /api/tarefas/{id}
 
 ---
 
+# 📘 Swagger
+
+## Interface da API funcionando
+
+![Swagger](swagger.png)
+
 # 👨‍💻 Autor
 
 Felippe
