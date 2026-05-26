@@ -1,4 +1,4 @@
-# ✅ Todo List API
+ # ✅ Todo List API
 
 API RESTful desenvolvida com ASP.NET Core 8, Entity Framework Core e SQL Server para gerenciamento de tarefas (To Do List).
 
@@ -34,6 +34,135 @@ Data/
 Migrations/
 Program.cs
 appsettings.json
+```
+
+---
+
+# 📂 Explicação das pastas
+
+## 📁 Controllers/
+
+Responsável por receber as requisições HTTP da API.
+
+Nesta pasta ficam os endpoints da aplicação, como:
+
+- GET
+- POST
+- PUT
+- DELETE
+
+Os Controllers fazem a comunicação entre o cliente e o banco de dados.
+
+Exemplo:
+
+```bash
+GET /api/tarefas
+POST /api/tarefas
+```
+
+---
+
+## 📁 Models/
+
+Contém as classes que representam as entidades da aplicação.
+
+As Models definem como os dados serão armazenados no banco.
+
+Exemplo:
+
+```csharp
+public class Tarefa
+{
+    public int Id { get; set; }
+
+    public string Titulo { get; set; }
+
+    public string Descricao { get; set; }
+
+    public bool Concluida { get; set; }
+}
+```
+
+Essa classe representa a tabela de tarefas no banco de dados.
+
+---
+
+## 📁 Data/
+
+Responsável pela configuração do banco de dados.
+
+Nesta pasta fica o:
+
+```csharp
+AppDbContext
+```
+
+O DbContext realiza a comunicação entre a aplicação e o SQL Server utilizando Entity Framework Core.
+
+Também é responsável pelo mapeamento das tabelas.
+
+---
+
+## 📁 Migrations/
+
+Contém os arquivos de migração do Entity Framework Core.
+
+As migrations servem para:
+
+- Criar tabelas
+- Atualizar tabelas
+- Alterar colunas
+- Versionar o banco de dados
+
+Comandos utilizados:
+
+```bash
+Add-Migration InitialCreate
+
+Update-Database
+```
+
+---
+
+## 📄 Program.cs
+
+Arquivo principal da aplicação.
+
+Responsável por:
+
+- Configurar serviços
+- Configurar Swagger
+- Configurar Entity Framework
+- Inicializar a API
+
+Exemplo:
+
+```csharp
+builder.Services.AddControllers();
+
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<AppDbContext>();
+```
+
+---
+
+## ⚙️ appsettings.json
+
+Arquivo de configurações da aplicação.
+
+Nele ficam:
+
+- String de conexão
+- Configurações do ambiente
+- Configurações da aplicação
+
+Exemplo:
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=TodoListDb;Trusted_Connection=True;TrustServerCertificate=True;"
+}
 ```
 
 ---
@@ -217,6 +346,8 @@ DELETE /api/tarefas/{id}
 ## Interface da API funcionando
 
 ![Swagger](swagger.png)
+
+---
 
 # 👨‍💻 Autor
 
